@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %} Home page | cr4ckker {% endblock %}
+
+{% block styles %}
+.db-filter{
+  border-radius: 4px;
+  border-style: none;
+}
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-3">
+    <div class="row py-3">
+      <div class="col-lg-11 mx-auto">
+        <div class="card rounded shadow border-0">
+          <div class="p-lg-4 table-theme rounded">
+             <div class="d-flex justify-content-between">
+              <div class="p-1"><p class="my-0 me-2 h5">Entries:</p><input class="db-filter" type="text" id="table-entries" placeholder="int" value="10" style="width:40px;"></div>
+              
+              
+              <div class="p-2">
+               <div class="btn btn-success" id="update-info">Поиск</div>
+              </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr role="row">
+                            <th><ul class="list-group"><li class="list-group-item py-auto table-theme">Name</li><li class="list-group-item p-1 table-theme"><input type="text" id="item-name" placeholder="Text" class="db-filter"></li></ul></th>
+                            <th><ul class="list-group"><li class="list-group-item py-auto table-theme">CSGO500 price</li><li class="list-group-item p-1 table-theme"><input type="text" id="item-csgo500" placeholder="Value" class="db-filter w-100"></li></ul></th>
+                            <th><ul class="list-group"><li class="list-group-item py-auto table-theme">CSGOTM price</li><li class="list-group-item p-1 table-theme"><input type="text" id="item-csgotm" placeholder="Value" class="db-filter w-100"></li></ul></th>
+                            <th><ul class="list-group"><li class="list-group-item py-auto table-theme">CSGOTM volume</li><li class="list-group-item p-1 table-theme"><input type="text" id="item-csgotmv" placeholder="Text" class="db-filter w-100"></li></ul></th>
+                            <th><ul class="list-group"><li class="list-group-item py-auto table-theme">STEAM price</li><li class="list-group-item p-1 table-theme"><input type="text" id="item-steamtm" placeholder="Value" class="db-filter w-100"></li></ul></th>
+                            <th><ul class="list-group"><li class="list-group-item py-auto table-theme">STEAM volume (сутки)</li><li class="list-group-item p-1 table-theme"><input type="text" id="item-steamtmv" placeholder="Value" class="db-filter w-100"></li></ul></th>
+                            <th><ul class="list-group"><li class="list-group-item py-auto table-theme">Last check</li><li class="list-group-item p-1 table-theme"><input type="text" id="item-last" placeholder="Text" class="db-filter w-100"></li></ul></th>
+                        </tr>
+                    </thead>
+                    <tbody id='DB-info'>
+                        {% for item in Items %}
+                        <tr>
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.value }} ({{ item.cost }})</td>
+                            <td>{{ item.csgotm_value }}</td>
+                            <td>{{ item.csgotm_volume }}</td>
+                            <td>{{ item.steamtm_value }}</td>
+                            <td>{{ item.steamtm_volume }}</td>
+                            <td style="width: 140px;">{{ item.last_check }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="static/DB.js"></script>
+{% endblock %}

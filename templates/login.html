@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %} Login | cr4ckker {% endblock %}
+
+{% block styles %}
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+    text-align: center;
+  }
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #c16ae4;
+    outline: 0;
+    box-shadow: 0 0 0 0!important;
+}
+{% endblock %}
+
+{% block content %}
+<div class="form-signin">
+ <form id="loginForm" style="display: block;">
+
+  <h1 class="h3 mb-3 fw-normal noselect">Sign in</h1>
+ <div class="text-dark">
+  <div class="form-floating mb-2">
+   <input type="login" class="form-control" id="signin_login" placeholder="name@example.com">
+   <label for="signin_login">Login</label>
+  </div>
+  <div class="form-floating">
+   <input type="password" class="form-control" id="signin_pass" placeholder="Password">
+   <label for="signin_pass">Password</label>
+  </div>
+ </div>
+  <div class="w-50 btn btn-lg btn-primary mt-4 me-2" id="login">Sign in</div>
+  <div class="w-25 btn btn-sm btn-danger mt-4" id="signupOpen">Sign up</div>
+
+ </form>
+ <form id="signupForm" style="display: none;">
+
+    <h1 class="h3 mb-3 fw-normal noselect">Sign up</h1>
+   <div class="text-dark">
+    <div class="form-floating mb-2">
+     <input type="email" class="form-control" id="signup_login" placeholder="name@example.com">
+     <label for="signup_login">Login</label>
+    </div>
+    <div class="form-floating mb-1">
+     <input type="password" class="form-control" id="signup_pass" placeholder="Password">
+     <label for="signup_pass">Password</label>
+    </div>
+    <div class="form-floating">
+     <input type="password" class="form-control" id="signup_rpass" placeholder="Password">
+     <label for="signup_rpass">Repeat Password</label>
+    </div>
+   </div>
+    <div class="w-50 btn btn-lg btn-primary mt-4 me-2" id="signup">Sign up</div>
+    <div class="w-25 btn btn-sm btn-danger mt-4" id="signinOpen">Sign in</div>
+   </form>
+   <p class="text-danger" id="error_info"></p>
+</div>
+<script type="text/javascript" src="static/auth.js"></script>
+{% endblock %}

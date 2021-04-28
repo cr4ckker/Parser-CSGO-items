@@ -1,0 +1,23 @@
+.body-theme{
+    background-color: #112;
+    color: rgba(255,255,255,.55)!important;
+}
+.nav-bg{
+    border-bottom: 1px solid #747474!important;
+    background-color: #373742;
+}
+.btn-theme{
+    border-bottom: 1px solid #747474!important;
+    background-color: #373742;
+}
+.table-theme{
+    background-color: rgba(43,43,52)!important;
+    color: rgba(255,255,255,.55)!important;
+}
+td{
+    color:#b4b4b4;
+}
+.db-filter{
+    background-color:  rgba(59,59,69)!important;
+    color: rgba(255,255,255,.55)!important;
+}

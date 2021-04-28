@@ -1,0 +1,11 @@
+{% for item in Items %}
+<tr>
+    <td>{{ item.name }}</td>
+    <td>{{ item.value }} ({{ item.cost }})</td>
+    <td>{{ item.csgotm_value }}</td>
+    <td>{{ item.csgotm_volume }}</td>
+    <td>{{ item.steamtm_value }}</td>
+    <td>{{ item.steamtm_volume }}</td>
+    <td style="width: 140px;">{{ item.last_check }}</td>
+</tr>
+{% endfor %}
