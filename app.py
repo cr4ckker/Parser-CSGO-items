@@ -8,7 +8,6 @@ from flask_login import LoginManager, login_user, logout_user, current_user, log
 from markupsafe import escape
 from typing import List
 
-from const import *
 from models import db, Item_Data, User
 from Funcs import ParseService, Theme_session
 # from forms import ArticleForm, RegistrationForm, LoginForm
